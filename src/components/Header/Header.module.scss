@@ -1,0 +1,20 @@
+@import "/styles/variables.scss";
+@import "/styles/fonts.scss";
+
+.contentWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 60px;
+}
+
+.link {
+  font-family: "Poppins-bold";
+  color: $logoCl;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+}

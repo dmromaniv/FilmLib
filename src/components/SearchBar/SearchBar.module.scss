@@ -1,0 +1,40 @@
+@import "/styles/variables.scss";
+
+.form {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 150px;
+  height: 30px;
+  padding: 5px 15px;
+
+  border: 1px solid $lightBdrCl;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+
+  &:focus {
+    outline: none;
+    border-color: $darkBdrCl;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 250px;
+  }
+}
+
+.button {
+  height: 30px;
+  padding: 5px 15px;
+
+  border: 1px solid $lightBdrCl;
+  border-left: none;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hoverCl;
+  }
+}

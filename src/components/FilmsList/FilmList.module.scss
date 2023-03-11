@@ -1,0 +1,27 @@
+@import "styles/variables.scss";
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  @media screen and (min-width: $desktop) {
+    gap: 20px;
+  }
+}
+
+.item {
+  border-radius: 5%;
+  box-shadow: -1px 2px 20px 0px rgba(0, 0, 0, 0.15);
+  &:hover {
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.35);
+  }
+
+  @media screen and (min-width: $tablet) {
+    flex-basis: calc((100% - 20px) / 3);
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-basis: calc((100% - 60px) / 4);
+  }
+}

@@ -1,0 +1,19 @@
+@import "/styles/variables.scss";
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  height: 60px;
+  padding: 15px 0;
+
+  font-size: 13px;
+  color: $secondaryTextCl;
+}
+
+.sourceDesc {
+  text-align: center;
+}

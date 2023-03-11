@@ -1,0 +1,51 @@
+@import "styles/variables.scss";
+
+.contentBlock {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    margin: 20px 0 30px;
+  }
+  @media screen and (min-width: $mobile) and (max-width: $tablet) {
+    margin-bottom: 10px;
+  }
+}
+
+.heading {
+  font-family: "Poppins-bold";
+  text-align: center;
+}
+
+.plotHeading {
+  display: block;
+  font-weight: 700;
+  font-size: 16px;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 18px;
+  }
+}
+
+.plotDesc {
+  @media screen and (min-width: $mobile) and (max-width: $tablet) {
+    font-size: 14px;
+  }
+}
+
+.imgWrapper {
+  @media screen and (min-width: $mobile) and (max-width: $tablet) {
+    margin: 10px 0;
+  }
+}
+
+.image {
+  @media screen and (min-width: $mobile) and (max-width: $tablet) {
+    width: 100%;
+  }
+  @media screen and (min-width: $tablet) and (max-width: $desktop) {
+    width: 350px;
+  }
+  border-radius: 5px;
+}

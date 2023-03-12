@@ -3,19 +3,23 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 
 import style from "./Pagination.module.scss";
+import { IPaginationProps } from "./Pagination.props";
 
-export default function Pagination({ currentPage, totalPages }) {
+const Pagination = ({
+  currentPage,
+  totalPages,
+}: IPaginationProps): JSX.Element => {
   const router = useRouter();
   const filmTitle = router.query.title;
 
-  const [startPage, setPages] = useState(+currentPage);
+  const [startPage, setPages] = useState<number>(currentPage);
 
   let endPage = startPage + 4;
   if (endPage > totalPages) {
-    endPage = totalPage;
+    endPage = totalPages;
   }
 
-  const handlePrevClick = () => {
+  const handlePrevClick = (): void => {
     const page = endPage - (endPage - startPage) - 5;
     if (page <= 0) {
       setPages(1);
@@ -24,7 +28,7 @@ export default function Pagination({ currentPage, totalPages }) {
     }
   };
 
-  const handleNextClick = () => {
+  const handleNextClick = (): void => {
     setPages(endPage + 1);
   };
 
@@ -46,7 +50,7 @@ export default function Pagination({ currentPage, totalPages }) {
             key={page}
             href={`/films/${filmTitle}/${page}`}
           >
-            <button className={style.button} disabled={+currentPage === page}>
+            <button className={style.button} disabled={currentPage === page}>
               {page}
             </button>
           </Link>
@@ -60,4 +64,6 @@ export default function Pagination({ currentPage, totalPages }) {
       )}
     </div>
   );
-}
+};
+
+export default Pagination;

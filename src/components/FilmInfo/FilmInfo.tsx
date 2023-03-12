@@ -1,16 +1,15 @@
 import style from "./FilmInfo.module.scss";
+import { IFilmInfo } from "./FilmInfo.props";
 
-const getVerifiedData = (filmsData) => {
-  let verifiedData = {};
-
-  Object.entries(filmsData).forEach((el) => {
-    if (el[1] === "N/A") {
-      el[1] = "Unfortunately, we didn't find any data";
+const getVerifiedData = (filmsData: IFilmInfo): IFilmInfo => {
+  for (const key in filmsData) {
+    if (filmsData.hasOwnProperty(key)) {
+      if (filmsData[key] === "N/A") {
+        filmsData[key] = "Unfortunately, we didn't find any data";
+      }
     }
-    verifiedData = { ...verifiedData, [el[0]]: el[1] };
-  });
-
-  return verifiedData;
+  }
+  return filmsData;
 };
 
 const FilmInfo = ({
@@ -21,12 +20,12 @@ const FilmInfo = ({
   Country,
   Director,
   Genre,
-}) => {
+}: IFilmInfo): JSX.Element => {
   const filmInfo = getVerifiedData({
     Title,
     Year,
-    Ratings,
     Actors,
+    Ratings,
     Country,
     Director,
     Genre,
@@ -62,14 +61,20 @@ const FilmInfo = ({
             <td className={style.tData}>
               {
                 <ul>
-                  {filmInfo.Ratings.map((rating) => (
-                    <li className={style.ratings} key={rating.Source}>
-                      <span className={style.ratingsSource}>
-                        {rating.Source}:
-                      </span>
-                      <span className={style.ratingsScore}>{rating.Value}</span>
-                    </li>
-                  ))}
+                  {filmInfo.Ratings.length == 0 ? (
+                    <li>There is any ratings</li>
+                  ) : (
+                    filmInfo.Ratings.map((rating) => (
+                      <li className={style.ratings} key={rating.Source}>
+                        <span className={style.ratingsSource}>
+                          {rating.Source}:
+                        </span>
+                        <span className={style.ratingsScore}>
+                          {rating.Value}
+                        </span>
+                      </li>
+                    ))
+                  )}
                 </ul>
               }
             </td>

@@ -22,8 +22,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/components/SearchBar/SearchBar.jsx",
-    "pages/index.jsx"
+    "src/components/SearchBar/SearchBar.tsx",
+    "pages/index.tsx"
   ],
   "exclude": ["node_modules"]
 }

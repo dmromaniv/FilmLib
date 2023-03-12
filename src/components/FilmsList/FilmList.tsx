@@ -3,8 +3,9 @@ import { useRouter } from "next/router";
 
 import FilmItem from "../FilmItem/FilmItem";
 import style from "./FilmList.module.scss";
+import { FilmPreviewDTO } from "@/model/filmsResponseDTO";
 
-const FilmList = ({ films }) => {
+const FilmList = ({ films }: { films: FilmPreviewDTO[] }): JSX.Element => {
   const router = useRouter();
 
   return (

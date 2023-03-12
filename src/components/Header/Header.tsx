@@ -3,7 +3,7 @@ import Link from "next/link";
 import SearchBar from "../SearchBar/SearchBar";
 import style from "./Header.module.scss";
 
-const Header = () => {
+const Header = (): JSX.Element => {
   return (
     <header>
       <div className="container">

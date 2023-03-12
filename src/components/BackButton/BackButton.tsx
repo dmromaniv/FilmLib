@@ -1,6 +1,7 @@
 import style from "./BackButton.module.scss";
+import { IBackButtonProps } from "./BackButton.props";
 
-const Footer = ({ onClick }) => {
+const BackButton = ({ onClick }: IBackButtonProps): JSX.Element => {
   return (
     <button onClick={onClick} className={style.button}>
       Go back
@@ -8,4 +9,4 @@ const Footer = ({ onClick }) => {
   );
 };
 
-export default Footer;
+export default BackButton;

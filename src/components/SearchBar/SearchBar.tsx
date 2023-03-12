@@ -1,22 +1,22 @@
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 
-import React, { useState } from "react";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
 import style from "./SearchBar.module.scss";
 
-const SearchBar = () => {
+const SearchBar = (): JSX.Element => {
   const router = useRouter();
 
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const handleChange = (event) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const inputtedSearchQuery = event.target.value;
     setSearchQuery(inputtedSearchQuery);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     if (searchQuery.trim()) {
       router.push(`/films/${searchQuery}/1`);

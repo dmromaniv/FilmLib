@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import style from "styles/NotFoundPage.module.scss";
 
-const PageNotFound = () => {
+const NotFound = (): JSX.Element => {
   return (
     <main>
       <div className="container">
@@ -29,4 +29,4 @@ const PageNotFound = () => {
   );
 };
 
-export default PageNotFound;
+export default NotFound;

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import style from "./NotFoundMsg.module.scss";
 
-const NotFoundMsg = ({ message }) => {
+const NotFoundMsg = ({ message }: { message: string }): JSX.Element => {
   return (
     <div className="container">
       <div className={style.contentWrapper}>

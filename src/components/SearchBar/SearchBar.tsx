@@ -20,6 +20,7 @@ const SearchBar = (): JSX.Element => {
     event.preventDefault();
     if (searchQuery.trim()) {
       router.push(`/films/${searchQuery}/1`);
+      setSearchQuery("");
     } else {
       Notify.warning("Please, enter the film title to search ");
     }
